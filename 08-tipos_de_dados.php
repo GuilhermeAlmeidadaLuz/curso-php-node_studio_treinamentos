@@ -5,7 +5,7 @@ Data: 27/02/2025
 /*************** Escalares ******************/
 
 
-// string ----------------------------------
+// string ------------------------------
 
 $nome = "Olá mundo";    // acento é contabilizado no length da string
 var_dump($nome);  // função var_dump mostra informações sobre uma variável
@@ -56,11 +56,51 @@ else:
 endif;
 echo "<hr>";
 
+
 /*************** Compostos ******************/
 
-// array
 
-$carros = ["Hilux", "Montana", "Corolla", 2008, 75100.90, true];
-// $tipos = ("Água", "Óleo");
+// array -----------------------------------------------
+
+$carros = array("Gol", "Uno", "Camaro", 12, 20.6, true);
+// $carros = ["Hilux", "Montana", "Corolla", 2008, 75100.90, true];
+
 var_dump($carros);
-// var_dump($tipos);
+
+if (is_array($carros)):
+    echo "É um array";
+else:
+    echo "Não é um array";
+endif;
+echo "<hr>";
+
+
+// object -------------------------------------
+
+class Cliente {
+    public $name;
+    public function atribuirNome($name) {
+        $this->$name = $name;
+    }
+}
+
+$cliente = new Cliente();   // cliente é um objeto
+$cliente->atribuirNome('Godofredo');
+
+var_dump($cliente);
+
+if (is_object($cliente)):
+    echo "É um objeto";
+else:
+    echo "Não é um objeto";
+endif;
+echo "<hr>";
+
+
+/*************** Especiais ******************/
+
+// NULL
+$cidade = NULL; // não tem valor atribuído a ela
+var_dump($cidade);
+
+// Resource (para fazer referência a recursos externos: fazer conexão com banco de dados ou manipulação de arquivos)
